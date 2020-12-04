@@ -1,0 +1,51 @@
+﻿@model MyWebApp.Models.Calculator
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Greatest Common Denominator Calculator</h1>
+    <p>This project aims to show a cloud implementation of a GCD calculator.</p>
+<div class="row">
+    <div class="col-md-4">
+        <h2>Euclidean algorithm</h2>
+        <p>
+           The oldest and most common algorithm. This is frequently used to calculate GCD, invended by euclid around 300BC.
+        </p>
+    </div>
+    <div class="col-md-4">
+        <h2>C# native algorithm</h2>
+        <p>This is the built in function in C# for the bigIntiger library. It likely implements the Euclidian algorithm.</p>
+    </div>
+    <div class="col-md-4">
+        <h2>recursive</h2>
+        <p>This algorithm uses recusion to calculate the GDC in a very concice and easy to understand way.</p>
+    </div>
+</div>
+<div>
+    <form asp-action="Index">
+
+
+        <label for="fnumb">First Number:</label>
+        <input type="number" id="value1" name="value1" asp-for="value1"><br><br>
+
+
+        <label for="snumb">Second Number:</label>
+        <input type="number" id="value2" name="value2" asp-for="value2"><br><br>
+
+
+        <label for="equ">Equation Used:</label>
+        <select name="type" id="type" asp-for="type">
+            <option value="1">Euclidian Equation</option>
+            <option value="2">C# natiev class</option>
+            <option value="3">Recursive</option>
+        </select><br><br>
+
+
+        <input type="submit" value="Submit"><br><br>
+        <label for="result" >result:</label>
+        <input id="result" name="result" type="number" asp-for="@ViewData["result"]" />
+    </form>
+
+</div>
+</div>
